@@ -2,8 +2,10 @@
 .contactanos-below-hero{
     background-color: #209989;
     width: 100%;
+    text-align: center;
     @media screen and (min-width: 1024px){
         padding: 15px;
+        text-align: inherit;
     }
     p{
         color: white;

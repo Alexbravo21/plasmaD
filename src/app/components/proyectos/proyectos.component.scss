@@ -1,0 +1,36 @@
+.proyectos-cont{
+    .proyectos-columna{
+        height: 180px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        .proyectos-texto-cont{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: rgb(255,141,2);
+            background: linear-gradient(0deg, rgba(255,141,2,1) 0%, rgba(250,197,15,1) 50%, rgba(0,212,255,0) 60%, rgba(0,212,255,0) 100%);
+            .proyectos-texto{
+                position: absolute;
+                bottom: 5px;
+                left: 0;
+                width: 100%;
+                padding: 0 10px;
+                .proyectos-texto-titulo{
+                    font-weight: bold;
+                }
+                .proyectos-texto-desc{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    .ver-mas{
+        text-align: right;
+        color: #ffbd02;
+        display: block;
+    }
+}
