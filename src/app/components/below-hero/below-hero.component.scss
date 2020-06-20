@@ -1,0 +1,26 @@
+
+.contactanos-below-hero{
+    background-color: #209989;
+    width: 100%;
+    @media screen and (min-width: 1024px){
+        padding: 15px;
+    }
+    p{
+        color: white;
+        margin-bottom: 3px;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+    }
+    .left-contact-below{
+        @media screen and (min-width: 1024px){
+            text-align: right;
+        }
+        button{
+            background-color: #1b5a5f;
+            color: white;
+            border: none;
+            width: 200px;
+            font-size: 1.5rem;
+        }
+    }
+}
