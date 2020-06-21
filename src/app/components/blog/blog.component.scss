@@ -1,0 +1,31 @@
+.blog-cont{
+    .blog-home-cont{
+        position: relative;
+        width: 100%;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        p{
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+        .blog-screen{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(32, 153, 137, .7);
+        }
+    }
+    .ver-mas{
+        text-align: right;
+        color: #41a5d7;
+        display: block;
+    }
+}
