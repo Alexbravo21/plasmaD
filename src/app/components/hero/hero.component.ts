@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from '../../services/contentful.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-hero',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+    heroImage : Observable<any>;
+
+  constructor(private contentful: ContentfulService) { }
 
   ngOnInit(): void {
+      this.contentful.logContent('servicios')
   }
 
 }
