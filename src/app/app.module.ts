@@ -13,6 +13,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProyectoDetailComponent } from './components/proyecto-detail/proyecto-detail.component';
+import { MdToHtmlPipe } from './md-to-html.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HomeComponent } from './components/home/home.component';
     BlogComponent,
     ContactoComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ProyectoDetailComponent,
+    MdToHtmlPipe
   ],
   imports: [
     BrowserModule,

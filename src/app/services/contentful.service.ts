@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import * as contentful from 'contentful';
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs/Observable';
+import { Observable, from } from 'rxjs';
+
+import * as marked from 'marked';
 
 @Injectable({
     providedIn: 'root'
@@ -14,18 +16,21 @@ export class ContentfulService {
 
     constructor() { }
 
-    logContent(contentId) {
-        this.client.getEntries({
-            content_type: contentId
-        })
-        //this.client.getEntry(contentId)
-            .then((entry) => console.log(entry))
+    getEntryById(contentId): Observable<any> {
+        return from(this.client.getEntry(contentId));
+        // this.client.getEntries({
+        //     content_type: contentId
+        // })
+        //     .then((entry) => console.log(entry))
     }
-    getMultipleContent(contentType) {
-       const promise = this.client.getEntries({
-            content_type: contentType
-        });
-        //return Observable.fromPromise(promise).map(entry => entry.fields);
+    getMultipleContent(contentType: string, limit: number): Observable<any> {
+        return from(this.client.getEntries({
+            content_type: contentType,
+            limit: limit
+        }));
+    }
+    markdownToHtml(md: string) {
+        return marked(md);
     }
 
 }

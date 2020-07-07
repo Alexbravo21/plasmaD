@@ -1,5 +1,10 @@
 .navbar{
     background-color: black;
+    .navbar-brand{
+        .logo_navbar{
+            margin: 10px 0 10px 5px;
+        }
+    }
     .navbar-item{
         color: white;
         &:hover{

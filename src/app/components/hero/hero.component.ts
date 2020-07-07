@@ -1,20 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { ContentfulService } from '../../services/contentful.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-hero',
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+    selector: 'app-hero',
+    templateUrl: './hero.component.html',
+    styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
 
-    heroImage : Observable<any>;
+    @Input() heroProyecto: string;
+    @Input() parentDetector: string;
+    heroImage: string;
 
-  constructor(private contentful: ContentfulService) { }
+    constructor(private contentful: ContentfulService) { }
 
-  ngOnInit(): void {
-      this.contentful.logContent('servicios')
-  }
+    ngOnInit(): void {
+        if(this.parentDetector === 'home'){
+            this.contentful.getMultipleContent('heroImages', 1).subscribe((data => {
+                this.heroImage = data.items[0].fields.imagenBanner.fields.file.url;
+            }))
+        }
+    }
+    ngOnChanges(changes: SimpleChanges){
+        if(changes.heroProyecto){
+            this.heroImage = this.heroProyecto;
+        }
+    }
+
 
 }

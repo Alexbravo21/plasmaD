@@ -1,30 +1,9 @@
 <h2 class="titular-section">Blog</h2>
 <div class="blog-cont contenedor section">
     <div class="columns">
-        <div class="column">
-            <div class="blog-home-cont" [ngStyle]="{'background-image': 'url('+blog.img+')'}">
-                <p>Impacta más, vende más</p>
-                <div class="blog-screen"></div>
-            </div>
-            <a href="#" class="ver-mas">Ver mas ></a>
-        </div>
-        <div class="column">
-            <div class="blog-home-cont" [ngStyle]="{'background-image': 'url('+blog.img+')'}">
-                <p>Impacta más, vende más</p>
-                <div class="blog-screen"></div>
-            </div>
-            <a href="#" class="ver-mas">Ver mas ></a>
-        </div>
-        <div class="column">
-            <div class="blog-home-cont" [ngStyle]="{'background-image': 'url('+blog.img+')'}">
-                <p>Impacta más, vende más</p>
-                <div class="blog-screen"></div>
-            </div>
-            <a href="#" class="ver-mas">Ver mas ></a>
-        </div>
-        <div class="column">
-            <div class="blog-home-cont" [ngStyle]="{'background-image': 'url('+blog.img+')'}">
-                <p>Impacta más, vende más</p>
+        <div class="column" *ngFor="let blogPost of blogPosts">
+            <div class="blog-home-cont" [ngStyle]="{'background-image': 'url('+blogPost.fields.imgBlog.fields.file.url+')'}">
+                <p>{{ blogPost.fields.tituloPost }}</p>
                 <div class="blog-screen"></div>
             </div>
             <a href="#" class="ver-mas">Ver mas ></a>

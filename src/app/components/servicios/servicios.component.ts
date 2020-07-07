@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from '../../services/contentful.service';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-servicios',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servicios.component.scss']
 })
 export class ServiciosComponent implements OnInit {
+    servicios: Entry<any>[] = [];
 
-  constructor() { }
+    constructor(private contentful: ContentfulService) { }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+        this.contentful.getMultipleContent('servicios', 3).subscribe((data => {
+            console.log(data);
+            this.servicios = data.items;
+        }))
+    }
 }

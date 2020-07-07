@@ -1,7 +1,8 @@
 .hero{
-    background: url(/assets/img/hero.jpg) no-repeat center center;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     .hero-body{
-        padding: 15rem 1.5rem;
+        padding: 25rem 1.5rem;
     }
 }

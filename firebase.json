@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/plasmaD",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
