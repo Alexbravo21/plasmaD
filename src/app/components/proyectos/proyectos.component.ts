@@ -15,7 +15,6 @@ export class ProyectosComponent implements OnInit {
 
     ngOnInit(): void {
         this.contentful.getMultipleContent('proyectos', 3).subscribe((data => {
-            console.log(data);
             this.proyectos = data.items;
         }))
     }

@@ -25,9 +25,16 @@ export class ProyectoDetailComponent implements OnInit {
   ngOnInit(): void {
     const proyectoId = this.route.snapshot.paramMap.get('id');
     this.contenftul.getEntryById(proyectoId).subscribe(data => {
-        this.heroProyecto = data.fields.bannerProyecto.fields.file.url;
-        this.proyecto.titulo = data.fields.tituloDeProyecto;
-        this.proyecto.contenido = this.sanitizer.bypassSecurityTrustHtml(documentToHtmlString(data.fields.descripcinDelProyecto));
+        if(this.route.snapshot.url[0].path == 'proyectos'){
+            this.heroProyecto = data.fields.bannerProyecto.fields.file.url;
+            this.proyecto.titulo = data.fields.tituloDeProyecto;
+            this.proyecto.contenido = this.sanitizer.bypassSecurityTrustHtml(documentToHtmlString(data.fields.descripcinDelProyecto));
+        }else{
+            console.log(data)
+            this.heroProyecto = data.fields.imgBlog.fields.file.url;
+            this.proyecto.titulo = data.fields.tituloPost;
+            this.proyecto.contenido = this.sanitizer.bypassSecurityTrustHtml(documentToHtmlString(data.fields.contPost));
+        }
     })
   }
 

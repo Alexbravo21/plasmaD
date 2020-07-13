@@ -18,10 +18,6 @@ export class ContentfulService {
 
     getEntryById(contentId): Observable<any> {
         return from(this.client.getEntry(contentId));
-        // this.client.getEntries({
-        //     content_type: contentId
-        // })
-        //     .then((entry) => console.log(entry))
     }
     getMultipleContent(contentType: string, limit: number): Observable<any> {
         return from(this.client.getEntries({

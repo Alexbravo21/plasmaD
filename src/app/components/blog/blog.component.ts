@@ -15,7 +15,6 @@ export class BlogComponent implements OnInit {
 
     ngOnInit(): void {
         this.contentful.getMultipleContent('blogPost', 4).subscribe((data => {
-            console.log(data);
             this.blogPosts = data.items;
         }))
     }

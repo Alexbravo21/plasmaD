@@ -14,7 +14,6 @@ export class ServiciosComponent implements OnInit {
 
     ngOnInit(): void {
         this.contentful.getMultipleContent('servicios', 3).subscribe((data => {
-            console.log(data);
             this.servicios = data.items;
         }))
     }

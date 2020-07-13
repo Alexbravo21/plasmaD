@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigarion">
     <div class="container">
         <div class="navbar-brand">
-            <a href="/" class="navbar-item">
+            <a [routerLink]="['']" class="navbar-item">
                 <img class="logo_navbar" src="assets/img/logo.png" alt="Plasma Digital" style="max-height: none;" width="150" height="50">
             </a>
 
@@ -14,11 +14,11 @@
         </div>
         <div id="desktop-menu" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">Servicios</a>
-                <a class="navbar-item">Nosotros</a>
-                <a class="navbar-item">Proyectos</a>
-                <a class="navbar-item">Blog</a>
-                <a class="navbar-item">Contacto</a>
+                <a class="navbar-item" (click)="scrollToElement('servicios')">Servicios</a>
+                <a class="navbar-item" (click)="scrollToElement('nosotros')">Nosotros</a>
+                <a class="navbar-item" (click)="scrollToElement('proyectos')">Proyectos</a>
+                <a class="navbar-item" (click)="scrollToElement('blog')">Blog</a>
+                <a class="navbar-item" (click)="scrollToElement('contacto')">Contacto</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">

@@ -1,4 +1,4 @@
-<h2 class="titular-section">Blog</h2>
+<h2 class="titular-section" id="blog">Blog</h2>
 <div class="blog-cont contenedor section">
     <div class="columns">
         <div class="column" *ngFor="let blogPost of blogPosts">
@@ -6,7 +6,7 @@
                 <p>{{ blogPost.fields.tituloPost }}</p>
                 <div class="blog-screen"></div>
             </div>
-            <a href="#" class="ver-mas">Ver mas ></a>
+            <p class="ver-mas" (click)="getToDetail(blogPost.sys.id)">Ver mas ></p>
         </div>
     </div>
 </div>
