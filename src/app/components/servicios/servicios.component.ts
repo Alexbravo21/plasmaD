@@ -13,7 +13,7 @@ export class ServiciosComponent implements OnInit {
     constructor(private contentful: ContentfulService) { }
 
     ngOnInit(): void {
-        this.contentful.getMultipleContent('servicios', 3).subscribe((data => {
+        this.contentful.getMultipleContent('servicios', 4).subscribe((data => {
             this.servicios = data.items;
         }))
     }
