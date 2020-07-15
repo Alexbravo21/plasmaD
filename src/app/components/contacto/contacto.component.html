@@ -1,9 +1,9 @@
 <h2 class="titular-section" id="contacto">Contácto</h2>
 <div class="contacto-cont contenedor section">
-    <div class="form-field-contacto">
+    <form class="form-field-contacto" [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
         <div class="field">
             <div class="control has-icons-left has-icons-right">
-                <input class="input" type="text" placeholder="Nombre">
+                <input class="input" type="text" placeholder="Nombre" name="Nombre" formControlName="Nombre">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                 </span>
@@ -12,11 +12,11 @@
         <div class="field-body">
             <div class="field">
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email">
+                    <input class="input" type="email" placeholder="Email" name="Email" formControlName="Email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
-                    <span class="icon is-small is-right">
+                    <span class="icon is-small is-right" style="display:none;">
                         <i class="fas fa-exclamation-triangle"></i>
                     </span>
                 </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="field">
                 <p class="control is-expanded has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Teléfono">
+                    <input class="input" type="email" placeholder="Teléfono" name="Tel" formControlName="Tel">
                     <span class="icon is-small is-left">
                         <i class="fas fa-phone"></i>
                     </span>
@@ -33,7 +33,7 @@
         </div>
         <div class="field">
             <div class="control">
-                <textarea class="textarea" placeholder="Mensaje"></textarea>
+                <textarea class="textarea" placeholder="Mensaje" name="Comment" formControlName="Comment"></textarea>
             </div>
         </div>
         <div class="field">
@@ -41,5 +41,5 @@
                 <button class="button is-fullwidth contacto-enviar">ENVIAR</button>
             </div>
         </div>
-    </div>
+    </form>
 </div>
