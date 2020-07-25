@@ -8,18 +8,33 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+    isActive: boolean = false;
+
     constructor(private router: Router) { }
 
     ngOnInit(): void {
     }
 
     scrollToElement($target) {
-        if(this.router.url == '/'){
-            document.querySelector(`#${$target}`).scrollIntoView({ behavior: 'smooth' });
-        }else{
+        this.isActive = this.isActive ? false : this.isActive;
+        if (this.router.url == '/') {
+            var element = document.getElementById($target);
+            var headerOffset = 80;
+            var elementPosition = element.getBoundingClientRect().top;
+            var offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        } else {
             console.log($target);
             this.router.navigate([''], { fragment: $target });
         }
+    }
+    
+    activateMenu(){
+        this.isActive = !this.isActive ? true : false;
     }
 
 }

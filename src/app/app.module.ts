@@ -17,6 +17,7 @@ import { ProyectoDetailComponent } from './components/proyecto-detail/proyecto-d
 import { MdToHtmlPipe } from './md-to-html.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CintilloComponent } from './components/cintillo/cintillo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     ProyectoDetailComponent,
-    MdToHtmlPipe
+    MdToHtmlPipe,
+    CintilloComponent
   ],
   imports: [
     BrowserModule,
