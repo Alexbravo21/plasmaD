@@ -1,6 +1,9 @@
 $colors: #d71659, #903886, #484c96, #3e9dcd, #068e80, #86b430, #edd920, #f4c209, #dd4b1a, #cb181c;
 .cintillo{
-    padding: 0;
+    .columns{
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+    }
     margin: 35px 0 30px;
     .color-cintillo{
         height: 5px;
