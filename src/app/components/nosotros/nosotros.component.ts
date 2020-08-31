@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from '../../services/contentful.service';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-nosotros',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nosotros.component.scss']
 })
 export class NosotrosComponent implements OnInit {
+    nosotros: Entry<any>[] = [];
+    nosotrosColor: Array<string> = ['morado', 'amarillo', 'azul', 'verde'];
 
-  constructor() { }
+    constructor(private contentful: ContentfulService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        this.contentful.getMultipleContent('nosotros', 4).subscribe((data => {
+            this.nosotros = data.items;
+        }))
+    }
 
 }

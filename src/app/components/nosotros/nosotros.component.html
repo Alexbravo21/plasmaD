@@ -1,54 +1,15 @@
 <h2 class="titular-section" id="nosotros">¿Por qué PLASMA?</h2>
 <div class="nosotros-cont section contenedor">
     <div class="columns is-multiline is-centered">
-        <div class="column is-half">
+        <div class="column is-half" *ngFor="let nosotro of nosotros;let i=index;">
             <div class="section">
                 <div class="columns is-mobile">
                     <div class="column is-2">
-                        <div class="nosotros-circulo morado"></div>
+                        <div class="nosotros-circulo morado" [ngClass]="{'colorNosotros[i]' : true}"></div>
                     </div>
                     <div class="column">
-                        <p class="nosotros-titulo">Inovación</p>
-                        <p class="nosotros-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae egestas justo. Suspendisse orci risus, egestas vitae aliquet ac, cursus nec libero.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="section">
-                <div class="columns is-mobile">
-                    <div class="column is-2">
-                        <div class="nosotros-circulo amarillo"></div>
-                    </div>
-                    <div class="column">
-                        <p class="nosotros-titulo">Tecnología</p>
-                        <p class="nosotros-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae egestas justo. Suspendisse orci risus, egestas vitae aliquet ac, cursus nec libero.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="section">
-                <div class="columns is-mobile">
-                    <div class="column is-2">
-                        <div class="nosotros-circulo azul"></div>
-                    </div>
-                    <div class="column">
-                        <p class="nosotros-titulo">Organización y calidad</p>
-                        <p class="nosotros-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae egestas justo. Suspendisse orci risus, egestas vitae aliquet ac, cursus nec libero.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="section">
-                <div class="columns is-mobile">
-                    <div class="column is-2">
-                        <div class="nosotros-circulo verde"></div>
-                    </div>
-                    <div class="column">
-                        <p class="nosotros-titulo">Servicios al cliente</p>
-                        <p class="nosotros-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae egestas justo. Suspendisse orci risus, egestas vitae aliquet ac, cursus nec libero.</p>
+                        <p class="nosotros-titulo">{{ nosotro.fields.titulo }}</p>
+                        <p class="nosotros-texto" [innerHTML]="nosotro.fields.descripcin | mdToHtml"></p>
                     </div>
                 </div>
             </div>
