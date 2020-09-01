@@ -1,3 +1,7 @@
-<section class="hero is-large" [ngStyle]="{'background-image': 'url('+heroImage+')'}">
-    <div class="hero-body"></div>
+<section class="hero is-large has-carousel" [style.height]="showCarousel ? 'auto' : '0'">
+    <div class="carousel">
+        <div class="item-{{i+1}}" *ngFor="let heroImage of heroImages; let i=index">
+            <div class="hero-body" [ngStyle]="{'background-image': 'url('+heroImage.fields.imagenBanner.fields.file.url+')'}"></div>
+        </div>
+    </div>
 </section>

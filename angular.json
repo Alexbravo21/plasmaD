@@ -29,9 +29,12 @@
             ],
             "styles": [
               "node_modules/bulma/css/bulma.css",
+              "node_modules/bulma-carousel/dist/css/bulma-carousel.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/bulma-carousel/dist/js/bulma-carousel.min.js"
+            ]
           },
           "configurations": {
             "production": {
